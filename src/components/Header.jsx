@@ -55,7 +55,7 @@ const Header = () => {
             
           </div>
           <div>
-            <ButtonLink label="Login" to="#" bg="transparent"/>
+            <ButtonLink label="Login" to="/account/dashboard" bg="transparent" />
             <ButtonLink label="Sign up" to="#"/>
           </div>
 

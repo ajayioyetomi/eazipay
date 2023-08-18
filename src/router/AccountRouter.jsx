@@ -3,6 +3,7 @@ import {Routes,Route} from 'react-router-dom';
 import { LandingPage } from '../pages';
 import { styled } from 'styled-components';
 import { SideNav,AccountHeader,AccountFooter } from '../components';
+import {Dashboard} from '../pages';
 
 const AppRouter = () => {
   return (
@@ -12,7 +13,8 @@ const AppRouter = () => {
         <MainContent>
             <AccountHeader />
             <Routes>
-              <Route path='/dashboard' element={<LandingPage />} />
+              <Route index element={<Dashboard />} />
+              <Route path='/dashboard' element={<Dashboard />} />
             </Routes>
             <AccountFooter />
         </MainContent>
