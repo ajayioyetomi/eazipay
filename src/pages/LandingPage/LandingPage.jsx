@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components';
-import {Banner,Payroll,Work,SalarySection} from '.';
+import {Banner,Payroll,Work,SalarySection,Form} from '.';
 
 const LandingPage = () => {
   return (<>
@@ -9,6 +9,7 @@ const LandingPage = () => {
       <Payroll />
       <Work />
       <SalarySection />
+      <Form />
     </Main>
   </>
     

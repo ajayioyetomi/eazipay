@@ -15,7 +15,6 @@ const Header = () => {
   const headerRef = useRef();
   const handleScroll = ()=>{
     let h = window.scrollY;
-    console.log(h,'h')
     if(h > 50){
       if(headerRef && headerRef.current){
          headerRef.current.classList.add('scroll');

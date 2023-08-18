@@ -25,7 +25,8 @@ const ButtonLink = styled(Btn)`
     box-shadow:${props => props.shadow || 'none'};
     border:none;
     outline:none;
-    font-size:13px;    
+    font-size:13px;  
+    cursor:pointer;  
 `
 
 export default ButtonLink;

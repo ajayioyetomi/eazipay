@@ -25,6 +25,7 @@ const Button = styled(Btn)`
     border:none;
     outline:none;
     font-size:13px;    
+    cursor:pointer;
 `
 
 export default Button;
