@@ -1,8 +1,10 @@
-import React,{useEffect, useRef} from 'react'
+import React,{useEffect, useRef, useState} from 'react'
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import {ButtonLink} from '.';
+import {SlMenu as OpenIcon} from 'react-icons/sl';
+import {FaTimes as CloseIcon} from 'react-icons/fa';
 
 const list = [
   "Individual",
@@ -13,6 +15,7 @@ const list = [
 
 const Header = () => {
   const headerRef = useRef();
+  const [open,set_open] = useState(false);
   const handleScroll = ()=>{
     let h = window.scrollY;
     if(h > 50){
@@ -39,7 +42,10 @@ const Header = () => {
         <Link to="/">
           <img src={logo} />
         </Link>
-        <nav>
+        <nav className={open?'open':""}>
+          <span>
+            {open?<CloseIcon onClick={()=>set_open(!open)} />:<OpenIcon onClick={()=>set_open(!open)} />}
+          </span>
           <div>
             {list.map((eLink) =>
               <Link key={eLink}>
@@ -100,6 +106,9 @@ const Wrapper = styled.header`
           color:var(--text-color);
         }
       }
+      & > span{
+        display: none;
+      }
       & > div:nth-of-type(2){
         display:flex;
         gap:30px;
@@ -113,6 +122,50 @@ const Wrapper = styled.header`
         }
 
       }
+      @media screen and (width<=890px){
+        position: fixed;
+        right:0;
+        top:0;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-content: start;
+        height:10vh;
+        width:calc(100% - 180px);
+        & > span{
+          display: flex;
+          justify-content: flex-end;
+          margin:20px 30px 0 0;
+          width:fit-content;
+          margin-left:auto;
+          cursor: pointer;
+
+        }
+        & > div{
+            display: none !important;
+        }
+        &.open{
+          
+          background-color: var(--white-color);
+          padding:20px;
+          height:100vh;
+          box-shadow: -2px 0 3px 1px rgba(0,0,0,0.08);
+          gap:30px;
+          & > div{
+            
+            display: grid !important;
+            grid-template-columns: 1fr;
+            gap:30px;
+
+          }
+        }
+       
+      }
+      @media screen and (width<=600px) {
+        &.open{
+          width:calc(100% - 100px);
+        }
+      }
+
     }
     
 
