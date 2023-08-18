@@ -1,11 +1,12 @@
 import React from 'react'
 import { styled } from 'styled-components';
-import {Banner} from '.';
+import {Banner,Payroll} from '.';
 
 const LandingPage = () => {
   return (<>
     <Main>
       <Banner />
+      <Payroll />
     </Main>
   </>
     

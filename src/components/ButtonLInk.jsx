@@ -1,18 +1,19 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 
 const Btn = (props) =>{
-    const label = props.children || props.label || "Button";
+    const label = props.children || props.label || "Link";
     return (
-        <button {...props}>
+        <Link {...props}>
             {label}
-        </button>
+        </Link>
     )
 }
 
 
 
-const Button = styled(Btn)`
+const ButtonLink = styled(Btn)`
     padding:15px 40px;
     border-radius: 30px;
     justify-content: center;
@@ -27,4 +28,4 @@ const Button = styled(Btn)`
     font-size:13px;    
 `
 
-export default Button;
+export default ButtonLink;
