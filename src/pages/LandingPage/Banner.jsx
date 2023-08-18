@@ -61,7 +61,8 @@ const Wrapper = styled.section`
     padding:76px 0 40px;
     display: flex;
     justify-content: center;
-    height:100vh;
+    height:120vh;
+    padding: 0 0 0 20px;
     & > div{
         display: grid;
         grid-template-columns: 0.9fr 1.1fr;
@@ -78,7 +79,7 @@ const Wrapper = styled.section`
                 
                 flex-direction: column;
                 & div:first-of-type{
-                    font-size:55px;
+                    font-size:var(--header-text);
                     font-weight: bold;
                     & > span.green{
                         color:#11453B;
@@ -140,6 +141,9 @@ const Wrapper = styled.section`
                                     font-weight:bold;
                                 }
                             }
+                            @media screen and (width <= 767px) {
+                                flex:1;
+                            }
                         }
                     }
                 }
@@ -155,6 +159,36 @@ const Wrapper = styled.section`
                 object-fit: contain;
             }
         }
+        @media screen and (width <= 890px){
+            width:100%;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            & > div:nth-of-type(2){
+                display:none;
+            }
+            & > div:first-of-type{
+                width:80%;
+                align-items: center;
+                & > div{
+                    width:100%;
+                }
+
+            }
+            
+        }
+        @media screen and (width <= 600px) {
+            & > div:first-of-type{
+                width:95%;
+                align-items: center;
+                & > div{
+                    width:100%;
+                }
+
+            }
+        }
+    }
+    @media screen and (width <= 767px) {
+        height:100vh;
     }
     
 
