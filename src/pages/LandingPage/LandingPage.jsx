@@ -1,10 +1,12 @@
 import React from 'react'
 import { styled } from 'styled-components';
-import { Header,Footer } from '../components';
+import {Banner} from '.';
 
 const LandingPage = () => {
   return (<>
-    <Main>LandingPage</Main>
+    <Main>
+      <Banner />
+    </Main>
   </>
     
   )
@@ -13,4 +15,6 @@ const LandingPage = () => {
 export default LandingPage;
 
 
-const Main = styled.main
+const Main = styled.main`
+    
+`
