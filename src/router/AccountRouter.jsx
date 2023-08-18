@@ -1,6 +1,5 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom';
-import { LandingPage } from '../pages';
 import { styled } from 'styled-components';
 import { SideNav,AccountHeader,AccountFooter } from '../components';
 import {Dashboard} from '../pages';
@@ -27,9 +26,26 @@ const AppRouter = () => {
 export default AppRouter;
 
 
-const Wrapper = styled.main``;
+const Wrapper = styled.main`
+  position: fixed;
+  width:100%;
+  top:0;
+  display: flex;
+  height:100%;
+  & > aside{
+    width:230px;
+    flex-shrink: 0;
+    height:100%;
+  }
+  & > section{
+    flex:1;
+    height: 100%;;
+  }
+
+`;
 
 const MainContent = styled.section`
-  
+  padding-top:55px;
+  background-color: var(--main-back);
 
 `
